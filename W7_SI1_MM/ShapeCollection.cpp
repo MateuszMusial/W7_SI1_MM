@@ -2,6 +2,7 @@
 
 void ShapeCollection::addShape(std::string typFigury)
 {
+	system("cls");
 	if (typFigury == "Square")
 		squaers.push_back(Square("Kwadrat"));
 	else if (typFigury == "Circle")
@@ -12,12 +13,13 @@ void ShapeCollection::addShape(std::string typFigury)
 
 void ShapeCollection::getShapesTable()
 {
-	std::cout << "Twoje Kola:\n";
+	system("cls");
+	std::cout << "Twoje Kola:\n\n";
 	for (auto c : circles)
 	{
 		c.toString();
 	}
-	std::cout << "\nTwoje kwadraty:\n";
+	std::cout << "\nTwoje kwadraty:\n\n";
 	for (auto s : squaers)
 	{
 		s.toString();
@@ -116,6 +118,7 @@ void ShapeCollection::getLargestShapeByArea()
 
 void ShapeCollection::getFormulas()
 {
+	system("cls");
 	if (squaers.size() > 0)
 	{
 		std::cout << "Kwadraty:\n";
