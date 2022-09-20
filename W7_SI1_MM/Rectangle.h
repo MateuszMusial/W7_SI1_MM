@@ -9,16 +9,12 @@ public:
         sideB = y;
         name = "rectangle";
     }
+    double calculateArea();
+    double calculatePerimeter();
     void showShape();
-    void calculateArea();
-    void calculatePerimeter();
     void toString();
 
 private:
     double sideA, sideB;
-
-
-
-
 };
 

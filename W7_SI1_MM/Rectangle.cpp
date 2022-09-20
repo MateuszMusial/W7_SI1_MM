@@ -14,14 +14,16 @@ void Rectangle::showShape()
 }
 
 
-void Rectangle::calculateArea()
+double Rectangle::calculateArea()
 {
 	area = sideA * sideB;
+	return area;
 }
 
-void Rectangle::calculatePerimeter()
+double Rectangle::calculatePerimeter()
 {
 	perimeter = sideA * 2 + sideB * 2;
+	return perimeter;
 }
 
 void Rectangle::toString()

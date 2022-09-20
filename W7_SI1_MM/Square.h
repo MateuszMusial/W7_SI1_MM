@@ -1,24 +1,16 @@
+
 #pragma once
 #include "Shape.h"
-#include <string>
-
 class Square :
     public Shape
 {
+private:
+    int a;
+    double calculateArea();
+    double calculatePerimeter();
 public:
-    Square(int x) {
-       
-        sideA = x;
-        name = "square";
-    }
-    void showShape();
-    void calculateArea();
-    void calculatePerimeter();
+    Square(std::string name);
     void toString();
 
-private:
-    double sideA;
-    
+
 };
-
-

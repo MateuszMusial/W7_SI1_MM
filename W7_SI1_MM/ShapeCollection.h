@@ -1,22 +1,17 @@
 #pragma once
-#include <vector>
+#include <iostream>
+#include "square.h"
 #include "Circle.h"
-#include "Rectangle.h"
-#include "Square.h"
-
+#include <vector>
 class ShapeCollection
 {
+	std::vector<Circle>circles;
+	std::vector<Square>squaers;
 public:
-	void addShape(std::string type);
-	void getShapeTable(std::string type);
-	void getLargestShapeByPerimeter(std::string type);
-	void getLargestShapeByArea(std::string type);
-
-private:
-
-	std::vector <Square> squares;
-	std::vector <Circle> Circles;
-	std::vector <Rectangle> rectangles;
+	void addShape(std::string typFigury);
+	void getShapesTable();
+	void getLargestShapeByPerimeter();
+	void getLargestShapeByArea();
+	void getFormulas();
 
 };
-

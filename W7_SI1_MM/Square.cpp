@@ -1,33 +1,31 @@
-#include "Square.h"
-#include "Shape.h"
-#include <iostream>
 
-void Square::showShape()
+#include "square.h"
+
+double Square::calculateArea()
 {
-	std::cout << "* * * * * * * *\n"
-		<< "*             *\n"
-		<< "*             *\n"
-		<< "*             *\n"
-		<< "*             *\n"
-		<< "*             *\n"
-		<< "*             *\n"
-		<< "* * * * * * * *" << std::endl;		
+    return a * a;
 }
 
-void Square::calculateArea()
+double Square::calculatePerimeter()
 {
-	area = sideA * sideA;
+    return 4 * a;
 }
 
-void Square::calculatePerimeter()
+Square::Square(std::string name)
 {
-	perimeter = sideA * 4;
+    this->name = name;
+    std::cout << "Podaj dlugosc boku a:";
+    std::cin >> a;
+    area = calculateArea();
+    perimeter = calculatePerimeter();
+    perimeterFormula = "aa";
+    AreaFormula = "4a";
 }
 
 void Square::toString()
 {
-	std::cout << "The name of this shape is: " << name << std::endl;
-	std::cout << "The area of this square is: area = " << area << " cm" << std::endl;
-	std::cout << "The perimeter of this square is: perimeter =" << perimeter << " cm" << std::endl;
+    std::cout << name << std::endl;
+    std::cout << "Dlugosc boku a:" << a << std::endl;
+    std::cout << "Obowod:" << perimeter << std::endl;
+    std::cout << "Pole:" << area << std::endl;
 }
-

@@ -1,24 +1,45 @@
 #include <iostream>
 #include "square.h"
-#include "rectangle.h"
+#include "Circle.h"
+#include "ShapeCollection.h"
 
-int main()
-{
-    std::cout << "Hello World!\n\n";
-    Square s(4);
-    s.calculateArea();
-    s.calculatePerimeter();
-    s.showShape();
-    s.toString();
+int main() {
 
-    Rectangle r(3.2, 4.9);
+    int choice;
+    ShapeCollection mojaKolekcja;
+    while (true) {
+        std::cout << "1.Add new shape\n2.Show All shapes\n3.Show shape with the largest pprimeter\n4Show shape with the largest area\n5.Quit\n6.Formulas\nChoice:";
+        std::cin >> choice;
 
-    std::cout << std::endl;
+        if (choice == 1) {
 
-    Shape* ptr;
-    ptr = &r;
-    ptr->showShape();
-    ptr->calculateArea();
-    ptr->calculatePerimeter();
-    ptr->toString();
+            std::cout << "1.Add Square\n2.Add Circle\nChoice: ";
+            std::cin >> choice;
+            if (choice == 1)
+                mojaKolekcja.addShape("Square");
+            else if (choice == 2)
+                mojaKolekcja.addShape("Circle");
+            else
+                std::cerr << "error";
+
+        }
+        else if (choice == 2)
+            mojaKolekcja.getShapesTable();
+        else if (choice == 3)
+            mojaKolekcja.getLargestShapeByPerimeter();
+        else if (choice == 4)
+            mojaKolekcja.getLargestShapeByArea();
+        else if (choice == 5)
+            break;
+        else if (choice == 6)
+        {
+            mojaKolekcja.getFormulas();
+
+        }
+
+        else
+            std::cerr << "Error";
+
+    }
+    return 0;
 }
